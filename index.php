@@ -84,11 +84,11 @@ $brinquedos = $resultado->fetch_all(MYSQLI_ASSOC);
 
                     <td>
 
-                        <a href="editar.php?id=<?= $brinquedo['id'] ?>">
+                        <a href="public/editar.php?id=<?= $brinquedo['id'] ?>">
                             Editar
                         </a>
 
-                        <a href="excluir.php?id=<?= $brinquedo['id'] ?>"
+                        <a href="public/excluir.php?id=<?= $brinquedo['id'] ?>"
                            onclick="return confirm('Deseja realmente excluir este brinquedo?')">
                             Excluir
                         </a>
