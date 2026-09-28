@@ -10,7 +10,8 @@ try {
 
     $stmt->execute();
 
-    $brinquedos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   $resultado = $stmt->get_result();
+$brinquedos = $resultado->fetch_all(MYSQLI_ASSOC);
 
 } catch (PDOException $erro) {
 
@@ -33,7 +34,7 @@ try {
 
     <h1>Gestão de Brinquedos</h1>
 
-    <a href="cadastrar.php" class="botao">
+    <a href="../public/cadastrar.php" class="botao">
         Cadastrar brinquedo
     </a>
 

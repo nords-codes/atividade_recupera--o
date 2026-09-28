@@ -5,16 +5,8 @@ $usuario = "root";
 $senha = "";
 $banco = "brinquedos";
 
-try {
-    $conexao = new PDO(
-        "mysql:host=$servidor;dbname=$banco;charset=utf8",
-        $usuario,
-        $senha
-    );
+$conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-} catch (PDOException $erro) {
-    die("Erro na conexão com o banco de dados: " . $erro->getMessage());
-}
-?>
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
+};
