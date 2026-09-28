@@ -6,7 +6,7 @@ try {
 
     $sql = "SELECT * FROM brinquedos ORDER BY id DESC";
 
-    $stmt = $conexao->prepare($sql);
+    $stmt = $conecao->prepare($sql);
 
     $stmt->execute();
 
@@ -34,7 +34,7 @@ $brinquedos = $resultado->fetch_all(MYSQLI_ASSOC);
 
     <h1>Gestão de Brinquedos</h1>
 
-    <a href="../public/cadastrar.php" class="botao">
+    <a href="public/cadastrar.php" class="botao">
         Cadastrar brinquedo
     </a>
 

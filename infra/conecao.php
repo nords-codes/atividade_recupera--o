@@ -5,8 +5,8 @@ $usuario = "root";
 $senha = "";
 $banco = "brinquedos";
 
-$conexao = new mysqli($servidor, $usuario, $senha, $banco);
+$conecao = new mysqli($servidor, $usuario, $senha, $banco);
 
-if ($conexao->connect_error) {
-    die("Falha na conexão: " . $conexao->connect_error);
+if ($conecao->connect_error) {
+    die("Falha na conexão: " . $conecao->connect_error);
 };
