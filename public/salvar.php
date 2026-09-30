@@ -12,6 +12,8 @@ $quantidade = $_POST["quantidade"];
             (nome, categoria, faixa_etaria, preco, quantidade)
             VALUES (?, ?, ?, ?, ?)";
 
+            $stmt = $conecao->prepare($sql);
+
 if(!$stmt){
     die("Erro na preparação da consulta: " . $conecao->error);
     } 
