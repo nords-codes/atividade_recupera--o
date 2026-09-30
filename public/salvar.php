@@ -8,14 +8,15 @@ $faixa_etaria = $_POST["faixa_etaria"];
 $preco = $_POST["preco"];
 $quantidade = $_POST["quantidade"];
 
-try {
-
-    $sql = "INSERT INTO brinquedos
+ $sql = "INSERT INTO brinquedos
             (nome, categoria, faixa_etaria, preco, quantidade)
             VALUES (?, ?, ?, ?, ?)";
 
-    $stmt = $conecao->prepare($sql);
+if(!$stmt){
+    die("Erro na preparação da consulta: " . $conecao->error);
+    } 
 
+   
     $stmt->bind_param(
         "sssdi",
         $nome,
@@ -30,7 +31,7 @@ try {
     header("Location: ../index.php");
     exit;
 
-} catch (Exception $erro) {
+ if(!$stmt->execute()) {
 
     die("Erro ao cadastrar o brinquedo: " . $erro->getMessage());
 
